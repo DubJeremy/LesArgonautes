@@ -19,9 +19,15 @@ class ArgonauteRepository extends ServiceEntityRepository
         parent::__construct($registry, Argonaute::class);
     }
 
-    // /**
-    //  * @return Argonaute[] Returns an array of Argonaute objects
-    //  */
+    /**
+     * @return Argonaute[] Returns an array of Argonaute objects
+     */
+    public function findByAll()
+    {
+        return $this->findBy([], ['id' => 'DESC']);  
+    }
+    
+    
     /*
     public function findByExampleField($value)
     {

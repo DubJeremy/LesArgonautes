@@ -1,0 +1,12 @@
+footer 
+{
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+    background: #f76c6c;
+    padding: 0.25em 0;
+    height: 50px;
+    @include flex;
+    bottom: 0px;
+    position: relative;
+}

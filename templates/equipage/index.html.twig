@@ -14,11 +14,6 @@
                 Envoyer
             </button>    
         {{form_end(formArgonaute)}}
-            <form class="new-member-form">
-                <label for="name">Nom de l&apos;Argonaute</label>
-                <input id="name" name="name" type="text" placeholder="Charalampos" />
-                <button type="submit">Envoyer</button>
-            </form>
         
         <!-- Member list -->
         <h2>Membres de l'équipage</h2>
@@ -29,19 +24,12 @@
         {% endfor %}
 
 
-        {% for argonaute in argonautes %}
-            <div class="card">
-                <p>{{argonaute.name}}</p>
-            </div>         
-        {% endfor %}
-
-
-
-
         <section class="member-list">
-            <div class="member-item">Eleftheria</div>
-            <div class="member-item">Gennadios</div>
-            <div class="member-item">Lysimachos</div>
+            {% for argonaute in argonautes %}
+                <div class="card">
+                    <p>{{argonaute.name}}</p>
+                </div>         
+            {% endfor %}
         </section>
     </main>
 {% endblock %}

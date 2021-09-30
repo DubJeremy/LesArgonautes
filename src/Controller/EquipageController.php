@@ -41,4 +41,20 @@ class EquipageController extends AbstractController
             'formArgonaute' => $form->createView(),
         ]);
     }
+
+    /**
+    *@Route("/{id}/delete",name="app_home_deleteArgonaute", requirements={"id"="\d+"})
+    */
+    public function deleteArgonaute(Request $request,Argonaute $argonaute, EntityManagerInterface $em)
+    {
+        if($this->isCsrfTokenValid('argonaute_delete_'.$argonaute->getId(),
+        $request->request->get('csrf_token')))
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($argonaute);
+            $em->flush();
+            $this->addFlash('delete', 'Vous avez raison, il n\'avait pas sa place au sein de l\'équipage!');
+        }
+        return $this->redirectToRoute('app_equipage_showArgonautes');    
+    }
 }

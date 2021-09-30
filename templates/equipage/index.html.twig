@@ -21,7 +21,12 @@
         <div id="crewMembers">
             <h2>Membres de l'équipage</h2>
             {% for message in app.flashes('success') %}
-                <div class="addSuccess">
+                <div class="success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('delete') %}
+                <div class="success">
                     {{ message }}
                 </div>
             {% endfor %}
@@ -31,6 +36,15 @@
                 {% for argonaute in argonautes %}
                     <div class="card">
                         <p>{{argonaute.name}}</p>
+
+                        <form action="{{path('app_home_deleteArgonaute',{'id': argonaute.id})}}" 
+                        method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="csrf_token" value="{{csrf_token('argonaute_delete_'~ argonaute.id)}}">
+                            <button>
+                                Supprimer  
+                            </button>
+                        </form> 
                     </div>         
                 {% endfor %}
             </section>

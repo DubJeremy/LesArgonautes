@@ -1,0 +1,5 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^lesargonautes\.gwqd3539\.odns\.fr$
+RewriteRule ^/?$ "https\:\/\/lesArgonautes\.gwqd3539\.odns\.fr\/\^\/\$" [R=301,L]
+

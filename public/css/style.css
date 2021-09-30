@@ -73,8 +73,8 @@ main #crewMembers {
   flex-wrap: wrap;
   position: relative;
 }
-main #crewMembers .addSuccess {
-  top: 40px;
+main #crewMembers .success {
+  top: 45px;
   position: absolute;
 }
 main #crewMembers #listmembers {

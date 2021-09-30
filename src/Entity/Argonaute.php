@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ArgonauteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArgonauteRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ArgonauteRepository::class)
+ * @UniqueEntity(fields={"name"}, message="Cet Argonaute fait déjà partie de l'équipage!")
  */
 class Argonaute
 {

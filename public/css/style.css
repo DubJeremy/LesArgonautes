@@ -13,11 +13,12 @@ body {
 header {
   background: #f4f4f4;
   text-align: center;
-  height: 100px;
+  height: auto;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 header img {
@@ -25,6 +26,7 @@ header img {
 }
 header h1 {
   font-size: 2.5em;
+  margin-left: 20px;
 }
 
 main {
@@ -113,6 +115,30 @@ footer {
   flex-wrap: wrap;
   bottom: 0px;
   position: relative;
+}
+
+@media screen and (max-width: 750px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  header img {
+    margin-top: 20px;
+  }
+  header h1 {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 370px) {
+  header img {
+    margin-top: 20px;
+  }
+  header h1 {
+    font-size: 2em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,27 +1,71 @@
 main 
 {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
-    min-height: calc(100vh - 238px);
+    min-height: calc(100vh - 198px);
 
-    h2 
+    // New member form
+    #addArgo
     {
-        text-align: center;
-        margin-top: 40px;
+        @include flex;
+        
+        h2 
+        {
+            margin-top: 40px;
+        }
+        form 
+        {
+            @include flex($align: flex-end, $dir: row);
+            margin-top: 40px;
+            margin-bottom: 40px;
+            
+            button 
+            {
+                margin-left: 10px;
+            }
+            
+            label 
+            {
+                display: block;
+                margin-bottom: 0.5em;
+                text-align: center;
+            } 
+            .new-member-form 
+            {
+                margin: 2em 0 4em 0;
+                text-align: center;
+            }
+        }
     }
-    label 
+    // Member list
+    #crewMembers
     {
-        display: block;
-        margin-bottom: 0.5em;
-    } 
-    .new-member-form 
-    {
-        margin: 2em 0 4em 0;
-        text-align: center;
-    }
-    .member-item 
-    {
-        padding: 0.25em 0;
-    }
+        @include flex;
+        position: relative;
 
+        .addSuccess
+        {
+            top: 40px;
+            position: absolute ;
+        }
+        #listmembers
+        {
+            @include flex($dir: row);
+            width: 100%;
+            margin-top: 60px;
+            
+            .card
+            {
+                @include flex;
+                width: 300px;
+                height: auto;
+                min-height: 50px;
+                background-color:$orange;
+                margin: 0px 49px 40px 49px;
+                border-radius: 10px;
+                text-transform: uppercase;
+                // border: 1px solid black;
+            }
+        }
+    }
 }

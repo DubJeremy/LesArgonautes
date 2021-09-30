@@ -4,6 +4,11 @@ main
     margin: 0 auto;
     min-height: calc(100vh - 198px);
 
+    button 
+    {
+        cursor: pointer;
+    }
+
     // New member form
     #addArgo
     {
@@ -72,7 +77,27 @@ main
                 margin: 0px 49px 40px 49px;
                 border-radius: 10px;
                 text-transform: uppercase;
-                // border: 1px solid black;
+                position: relative;
+
+                .trash 
+                {
+                    display: none;
+                }
+
+                &:hover
+                {
+                    
+                    .trash
+                    {
+                        display: block;
+                        background-color: $orange;
+                        border: none;
+                        position: absolute;
+                        right: 10px;
+                        bottom: 5px;
+                    }
+                }
+
             }
         }
     }

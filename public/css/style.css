@@ -34,6 +34,9 @@ main {
   margin: 0 auto;
   min-height: calc(100vh - 198px);
 }
+main button {
+  cursor: pointer;
+}
 main #addArgo {
   display: flex;
   justify-content: center;
@@ -106,6 +109,18 @@ main #crewMembers #listmembers .card {
   margin: 0px 49px 40px 49px;
   border-radius: 10px;
   text-transform: uppercase;
+  position: relative;
+}
+main #crewMembers #listmembers .card .trash {
+  display: none;
+}
+main #crewMembers #listmembers .card:hover .trash {
+  display: block;
+  background-color: #f76c6c;
+  border: none;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
 }
 
 footer {
@@ -137,6 +152,10 @@ footer {
   }
   header h1 {
     margin-bottom: 20px;
+  }
+
+  #crewMembers .success {
+    text-align: center;
   }
 }
 @media screen and (max-width: 370px) {

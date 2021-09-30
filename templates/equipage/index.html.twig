@@ -41,8 +41,8 @@
                         method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="csrf_token" value="{{csrf_token('argonaute_delete_'~ argonaute.id)}}">
-                            <button>
-                                Supprimer  
+                            <button class="trash">
+                                <i class="fas fa-trash-alt"></i>  
                             </button>
                         </form> 
                     </div>         

@@ -2,6 +2,8 @@
 
 {% block title %}Les Argonautes{% endblock %}
 
+{% set counterCrew = ( counter | default(0) ) %}
+
 {% block body %}
     <main> 
         <!-- New member form -->
@@ -34,6 +36,9 @@
 
             <section id="listmembers">
                 {% for argonaute in argonautes %}
+                    {% set counterCrew = counterCrew + 1 %}
+                     {# {% set counter = ( counter | default(0) ) + 1 %} #}
+
                     <div class="card">
                         <p>{{argonaute.name}}</p>
 
@@ -48,6 +53,13 @@
                     </div>         
                 {% endfor %}
             </section>
+        </div>
+        <div id="counter">
+            {% if counterCrew == 0 %}
+                <p>Rentrez le nom du premier Argonaute à rejoindre l'équipage!</p>
+            {% else %}     
+                <p>{{ counterCrew }} Argonaute{% if counterCrew > 1 %}s{% endif %} dans l'équipage</p>
+            {% endif %}
         </div>
     </main>
 {% endblock %}

@@ -140,6 +140,9 @@ main #crewMembers #listmembers .card {
   position: relative;
   transition: all 0.3s ease-out;
 }
+main #crewMembers #listmembers .card > p {
+  pointer-events: none;
+}
 main #crewMembers #listmembers .card .trash {
   display: none;
 }
@@ -155,6 +158,53 @@ main #crewMembers #listmembers .card:hover .trash {
   position: absolute;
   right: 10px;
   bottom: 5px;
+}
+main #counter {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 120px;
+  right: 400px;
+  width: 150px;
+  height: 150px;
+}
+main #counter .circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+main #counter .circle .count {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 2.5em;
+}
+main #counter .circleTxt {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  animation: turn 40s linear infinite;
+}
+main #counter .circleTxt span {
+  position: absolute;
+  top: -55px;
+  text-transform: uppercase;
+  display: inline-block;
+  transform-origin: 0 55px;
+}
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 footer {
